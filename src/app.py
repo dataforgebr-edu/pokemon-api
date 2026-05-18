@@ -1,4 +1,5 @@
 import random
+import time
 
 import requests
 
@@ -17,3 +18,5 @@ while i <= 10:
     print(f"Pokemon={data['name']} - types={tp}")
 
     i += 1
+
+    time.sleep(5)
