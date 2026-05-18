@@ -29,6 +29,41 @@ poetry install
 poetry task app
 ```
 
+## Docker
+
+### Build da imagem
+
+```bash
+docker build -t pokemon-api .
+```
+
+### Rodando o container
+
+```bash
+# Exibe os prints em tempo real
+docker run --name meu-pokemon-api pokemon-api
+
+# Roda em background
+docker run -d --name meu-pokemon-api pokemon-api
+```
+
+### Logs
+
+```bash
+# Ver logs
+docker logs meu-pokemon-api
+
+# Acompanhar em tempo real
+docker logs -f meu-pokemon-api
+```
+
+### Gerenciamento
+
+```bash
+docker stop meu-pokemon-api
+docker rm meu-pokemon-api
+```
+
 ## Desenvolvimento
 
 ### Comandos disponíveis
