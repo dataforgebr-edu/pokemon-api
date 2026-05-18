@@ -1,0 +1,38 @@
+[project]
+name = "pokemon-api"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "RodrigoSilva1989",email = "dataforge.br@gmail.com"}
+]
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "requests (>=2.34.2,<3.0.0)",
+    "taskipy (>=1.14.1,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "1"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.0.3,<10.0.0)",
+    "black (>=26.5.0,<27.0.0)",
+    "isort (>=8.0.1,<9.0.0)",
+    "bandit (>=1.9.4,<2.0.0)",
+    "pre-commit (>=4.6.0,<5.0.0)"
+]
+
+[tool.isort]
+profile = "black"
+
+[tool.taskipy.tasks]
+lint       = { cmd = "black src && isort src",                       help = "Formata código" }
+lint-check = { cmd = "black --check src && isort --check src",       help = "Verifica formatação (CI)" }
+security   = { cmd = "bandit -r src -lll",                                help = "Scan de segurança" }
+test       = { cmd = "pytest",                                                 help = "Roda testes" }
+app        = { cmd = "poetry run python src/app.py",                                  help = "Roda API pokemon" }
