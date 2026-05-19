@@ -1,5 +1,5 @@
 import random
-import time
+from time import sleep
 
 import requests
 
@@ -19,4 +19,4 @@ while i <= 10:
 
     i += 1
 
-    time.sleep(5)
+    sleep(5)
