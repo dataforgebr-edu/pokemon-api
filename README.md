@@ -4,7 +4,7 @@ Projeto em Python que consulta a [PokeAPI](https://pokeapi.co/) e exibe informa�
 
 ## O que faz
 
-Busca 10 pokemons aleatórios (IDs entre 1 e 100) e imprime o nome e tipos de cada um.
+Busca 10 pokemons aleatórios (IDs entre 1 e 100) e imprime o nome e tipos de cada um. 
 
 ```
 Pokemon=bulbasaur - types=grass, poison
